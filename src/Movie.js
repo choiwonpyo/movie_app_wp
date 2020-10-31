@@ -2,10 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './Movie.css'
 
+const staticUrl = process.env.PUBLIC_URL
+
 function Movies({ id, year, title, summary, poster, genres }) {
+    console.log(process.env.PUBLIC_URL)
     return (
         <div className="movie">
-            <img src={poster} alt={title} title={title} />
+            <img src={poster} onError={(ev) => {ev.target.src = staticUrl+ '/images/no_image.jpg'}} alt={title} title={title} />
             <div className="movie__data">
                 <h3 className="movie__title">{title}</h3>
                 <h5 className="movie__year">{year}</h5>
