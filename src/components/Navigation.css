@@ -1,0 +1,13 @@
+
+.nav-links {
+    background-color: #1A1A1D;
+    height: 100%;
+}
+.nav-link {
+    display: block;
+    text-decoration: none;
+    color: #efefef;
+    padding: 10px;
+    border-bottom: 3px solid #eaeaea;
+}
+

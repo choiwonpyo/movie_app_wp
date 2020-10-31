@@ -2,30 +2,25 @@
     box-sizing: border-box;
 }
 
-html, body, #root, .container {
+html, body, #root {
     height: 100%;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #f2f2f2;
+.root__container {
     height: 100%;
-}
-
-.container {
     display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+    justify-content: space-between;
 }
 
-.loader {
-    width: 100%;
-    height: 100%;
+.root__container .root__nav {
+    width: 5%;
+    min-width: 100px;
+}
+
+.root__container .root__page {
+    width:90%;
+    overflow: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 300;
 }
-

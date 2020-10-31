@@ -4,10 +4,9 @@ import './Movie.css'
 
 const staticUrl = process.env.PUBLIC_URL
 
-function Movies({ id, year, title, summary, poster, genres }) {
-    console.log(process.env.PUBLIC_URL)
+function Movies({ id, year, title, summary, poster, genres, history}) {
     return (
-        <div className="movie">
+        <div className="movie" onClick={() => {history.push(`/movies/${id}`)}}>
             <img src={poster} onError={(ev) => {ev.target.src = staticUrl+ '/images/no_image.jpg'}} alt={title} title={title} />
             <div className="movie__data">
                 <h3 className="movie__title">{title}</h3>
@@ -29,7 +28,8 @@ Movies.propTypes = {
     title: PropTypes.string.isRequired,
     summary: PropTypes.string.isRequired,
     poster: PropTypes.string.isRequired,
-    genres: PropTypes.arrayOf(PropTypes.string).isRequired
+    genres: PropTypes.arrayOf(PropTypes.string).isRequired,
+    history: PropTypes.object
 }
 
 export default Movies
